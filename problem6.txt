@@ -1,0 +1,43 @@
+importjava.util.*;
+public class NameController {
+
+private final NameServicenameService;
+
+    
+publicNameController(NameServicenameService) {
+this.nameService = nameService;
+    }
+
+    
+public List<String>getNames() {
+returnnameService.getNames();
+    }
+
+    
+public void addName(@RequestBody String name) {
+nameService.addName(name);
+    }
+
+}
+
+packagecom.example.demo.service;
+
+
+importorg.springframework.stereotype.Service;
+
+importjava.util.*;
+
+
+public class NameService {
+
+private static List<String> names = new ArrayList<>();
+
+public List<String>getNames() {
+return names;
+    }
+
+public void addName(String name) {
+names.add(name);
+    }
+
+}
